@@ -1,4 +1,4 @@
-describe('Modal overlays page', () => {
+describe('Verify Modal overlays page', () => {
     it('Verify modal dialog', () => {
         cy.visit('/pages/modal-overlays/dialog');
         cy.get('.result-from-dialog .appearance-filled.size-medium.status-primary.shape-rectangle.transitions').click()
