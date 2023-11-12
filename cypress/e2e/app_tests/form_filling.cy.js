@@ -1,17 +1,16 @@
 describe('Verify form filling', () => {
     it('Form filling and data filled', () => {
             cy.visit('/auth/register');
-            cy.get('#input-name').focus().realType('Name');
-            cy.get('input#input-name[ng-reflect-model]').should('have.value', 'Name');
+                function fillAndValidateFormData(selectorWithoutText, inputText, selectorWithText) {
+                    cy.get(selectorWithoutText).focus().realType(inputText);
+                    cy.get(selectorWithText).should('have.value', inputText);
+                }
 
-            cy.get('#input-email').focus().realType('test@email.com')
-            cy.get('input#input-email[ng-reflect-model]').should('have.value', 'test@email.com');
-
-            cy.get('#input-password').focus().realType('123456');
-            cy.get('input#input-password[ng-reflect-model]').should('have.value', '123456');
-
-            cy.get('#input-re-password').focus().realType('123456');
-            cy.get('input#input-re-password[ng-reflect-model]').should('have.value', '123456');
+            fillAndValidateFormData('#input-name', 'Name', 'input#input-name[ng-reflect-model]');
+            fillAndValidateFormData('#input-email', 'test@email.com', 'input#input-email[ng-reflect-model]');
+            fillAndValidateFormData('#input-password', '123456', 'input#input-password[ng-reflect-model]');
+            fillAndValidateFormData('#input-re-password', '123456', 'input#input-re-password[ng-reflect-model]');
+            
 
             cy.get('.label .custom-checkbox').realClick()
                 .should('have.class', 'custom-checkbox checked');
