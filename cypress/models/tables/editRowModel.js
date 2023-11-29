@@ -2,19 +2,20 @@ import { EditTableRow } from "../../pageObject/tables/editingTables";
 
 const editTableRow = new EditTableRow();
 
-export function clickOnRowsEditButton() {
+function clickOnRowsEditButton() {
     editTableRow.getFirstRowEditButton().realClick();
 }
-export function clearFoundIdInput() {
+function clearFoundIdInput() {
     editTableRow.getFirstRowIdInput().clear();
 }
 
-export function typeValueInIdInput(value) {
+function typeValueInIdInput(value) {
     editTableRow.getFirstRowIdInput().type(value);
 }
-export function clickOnEditButton() {
+function clickOnEditButton() {
     editTableRow.getFirstRowAddButton().realClick();
 }
-export function verifyEditedInputContainsFilledValue(value) {
+function verifyEditedInputContainsFilledValue(value) {
     editTableRow.getInputInserted().should('contain.text', value);
 }
+export{ clickOnRowsEditButton, clearFoundIdInput, typeValueInIdInput, clickOnEditButton, verifyEditedInputContainsFilledValue}

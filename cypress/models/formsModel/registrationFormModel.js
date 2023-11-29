@@ -14,55 +14,56 @@ const fillFormInput = (formInput, value) => {
     
 }
 
-export function fillNameInput (value)  {
+function fillNameInput (value)  {
     const nameInput = registrationFormPage.getNameInput();
     fillFormInput(nameInput, value);
 }
 
-export function fillEmailInput(value) {
+function fillEmailInput(value) {
     const emailInput = registrationFormPage.getEmailInput();
     fillFormInput(emailInput, value); 
 }
 
-export function fillPasswordInput(value) {
+function fillPasswordInput(value) {
     const passwordInput = registrationFormPage.getPasswordInput();
     fillFormInput(passwordInput, value);
 }
 
-export function fillConfirmPassword(value) {
+function fillConfirmPassword(value) {
     const confirmPassword = registrationFormPage.getConfirmPasswordInput();
     fillFormInput(confirmPassword, value);
 }
 
-export function tickAgreeToTermsCheckbox() {
+function tickAgreeToTermsCheckbox() {
     registrationFormPage.getAgreeToTermsCheckbox().realClick();
 }
 
-export function verifyNameInputFilled(name) {
+function verifyNameInputFilled(name) {
     registrationFormPage.getNameInputFilled()
     .should('have.value', name);
 }
 
-export function verifyEmailInputFilled(email) {
+function verifyEmailInputFilled(email) {
     registrationFormPage.getEmailInputFilled()
     .should('have.value', email);
 }
 
-export function verifyPasswordInputFilled(password) {
+function verifyPasswordInputFilled(password) {
     registrationFormPage.getPasswordInputFilled()
     .should('have.value', password);
 }
 
-export function verifyConfirmPasswordFilled(confirmationPassword) {
+function verifyConfirmPasswordFilled(confirmationPassword) {
     registrationFormPage.getConfirmPasswordFilled()
     .should('have.value', confirmationPassword);
 }
-export function verifyAgreeToTermsChecked(state) {
+function verifyAgreeToTermsChecked(state) {
     registrationFormPage.getAgreeToTermsCheckbox()
     .should('have.class', state);
 }   
 
-export function clickOnRegistrationButton() {
+function clickOnRegistrationButton() {
     cy.wait(1000);
        registrationFormPage.getRegisterButton().realClick();
 }
+export {fillNameInput, fillEmailInput, fillPasswordInput, fillConfirmPassword, tickAgreeToTermsCheckbox, verifyNameInputFilled, verifyEmailInputFilled, verifyPasswordInputFilled, verifyConfirmPasswordFilled, verifyAgreeToTermsChecked, clickOnRegistrationButton};

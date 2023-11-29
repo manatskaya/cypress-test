@@ -1,8 +1,10 @@
 import { fillNameInput, fillEmailInput, fillPasswordInput, fillConfirmPassword, tickAgreeToTermsCheckbox, verifyAgreeToTermsChecked, verifyNameInputFilled, verifyEmailInputFilled, verifyPasswordInputFilled, verifyConfirmPasswordFilled, clickOnRegistrationButton } from "../../../models/formsModel/registrationFormModel";
+import { navigateToURL, verifyLandedURLisCorrect } from "../../../models/helpers";
 
 describe('Verify form filling', () => {
     beforeEach(() => {
-        cy.visit('/auth/register');
+        navigateToURL('/auth/register');
+        verifyLandedURLisCorrect('/auth/register');
     })
     it('Verify form filling and data is correct', () => {
 

@@ -12,32 +12,33 @@ const initializeFormInput = (formInput, value) => {
     
 }
 
-export function specifyNameInput(value) {
+function specifyNameInput(value) {
     const nameInput = registrationFormValidation.getNameInput();
     initializeFormInput(nameInput, value);
 }
 
-export function specifyEmailInput(value) {
+function specifyEmailInput(value) {
     const emailInput = registrationFormValidation.getEmailInput();
     initializeFormInput(emailInput, value);
 }
 
-export function specifyPasswordInput(value) {
+function specifyPasswordInput(value) {
     const passwordInput = registrationFormValidation.getPassword();
     initializeFormInput(passwordInput, value);
 }
 
-export function verifyNameErrorMessage(errorIndex, errorMessage) {
+function verifyNameErrorMessage(errorIndex, errorMessage) {
     registrationFormValidation.getErrorMessage(errorIndex)
     .should('contain', errorMessage);
 }
 
-export function verifyEmailErrorMessage(errorIndex, errorMessage) {
+function verifyEmailErrorMessage(errorIndex, errorMessage) {
     registrationFormValidation.getErrorMessage(errorIndex)
     .should('contain', errorMessage);
 }
 
-export function verifyPasswordErrorMessage(errorIndex, errorMessage) {
+function verifyPasswordErrorMessage(errorIndex, errorMessage) {
     registrationFormValidation.getErrorMessage(errorIndex)
     .should('contain', errorMessage);
 }
+export{ specifyNameInput, specifyEmailInput, specifyPasswordInput, verifyNameErrorMessage, verifyEmailErrorMessage, verifyPasswordErrorMessage };
